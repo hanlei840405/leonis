@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: config-server
+  rabbitmq:
+    host: eureka-zuul
+    username: root
+    password: root
+  cloud:
+    config:
+      server:
+        git:
+          uri:  https://github.com/hanlei840405/config-center/
+      label: master
+      profile: dev
+#    stream:
+#      kafka:
+#        binder:
+#          brokers: eureka-zuul:9092
+#          zk-nodes: eureka-zuul:2181
+server:
+  port: 8301
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-zuul:8101/eureka/
+management:
+  security:
+    enabled: false
